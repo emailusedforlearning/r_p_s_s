@@ -24,17 +24,6 @@ function computerPlay(){
   }
 }
 
-function userPick (){
-  let playerChoice = prompt("Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.");
-  let playerSelection = toLowerCase(playerChoice);
-  while (playerSelection === "rock" || "paper" || "scissors"){
-    break;
-  }
-    if (playerSelection !== "rock" || "paper" || "scissors") {
-      let playerChoice = prompt("Invaild Choice" + "\n" + "Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.");
-    }
-}
-
 function playRound (playerSelection, computerSelection){
   if (playerSelection === computerSelection){
     tiedMatches +=1;
@@ -74,7 +63,7 @@ playRound(playerSelection, computerSelection);
 
 function game(){
   for (i=0; i<5; i++){
-    let playerSelection = userPick();
+    let playerSelection = prompt("Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.").toLowerCase();
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
   }
