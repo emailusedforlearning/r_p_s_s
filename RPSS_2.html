@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="./styles.css">
     <title>Rock, Paper, Scissors, SHOOT!</title>
   </head>
   <body>
-    <script>
 
-/*let playerSelection = prompt("Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.").toLowerCase();
-let computerSelection = computerPlay();*/
+    <div class = "options">
+      <div id = "Rock" class = "choice">
+        <button type="button">Rock</button>
+      </div>
+      <div id = "Paper" class = "choice">
+        <button type="button">Paper</button>
+      </div>
+      <div id = "Scissors" class = "choice">
+        <button type="Scissors">Scissors</button>
+      </div>
+    </div>
+
+
+
+    <script>
 let playerPoints = 0;
 let computerPoints = 0;
 let tiedMatches = 0;
+let totalMatches = tiedMatches + playerPoints + computerPoints;
 
 function computerPlay(){
   let computerPick = Math.floor(Math.random()*3);
@@ -24,75 +38,45 @@ function computerPlay(){
   }
 }
 
-function userPick (){
-  let playerChoice = prompt("Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.");
-  let playerSelection = toLowerCase(playerChoice);
-  while (playerSelection === "rock" || "paper" || "scissors"){
-    break;
-  }
-    if (playerSelection !== "rock" || "paper" || "scissors") {
-      let playerChoice = prompt("Invaild Choice" + "\n" + "Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.");
-    }
-}
-
 function playRound (playerSelection, computerSelection){
   if (playerSelection === computerSelection){
     tiedMatches +=1;
-    return alert("It is a tie!" + "\n" + "\n" + "You both picked: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "No points will be awarded." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches)
+    return alert("It is a tie!" + "\n" + "\n" + "You both picked: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "No points will be awarded." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches)
   }
   if (playerSelection === "rock"){
     if (computerSelection === "paper"){
       computerPoints +=1;
-      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints);
+      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches);
     }else {
       playerPoints +=1;
-      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints);
+      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches);
     }
   }
   if (playerSelection === "paper"){
     if (computerSelection === "scissors"){
       computerPoints +=1;
-      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints);
+      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches);
     }else {
       playerPoints +=1;
-      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints);
+      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches);
     }
   }
   if (playerSelection === "scissors"){
     if (computerSelection === "rock"){
       computerPoints +=1;
-      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints);
+      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches);
     }else {
       playerPoints +=1;
-      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints);
+      return alert("User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches + "\n" + "\n" + "\n" + "Total Matches: " + "\n" + totalMatches);
     }
   }
 }
 /*
 playRound(playerSelection, computerSelection);
 */
-
+/*
 function game(){
   for (i=0; i<5; i++){
-    let playerSelection = userPick();
-    let computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-  }
-  if (playerPoints>computerPoints){
-    alert("You Win!!!" + "\n" + "Final Score: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches);
-  }
-  else if (playerPoints<computerPoints){
-    alert("The Computer Won." + "\n" + "Final Score: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches);
-    }
-    else{
-      alert("It appears to be a tie." + "\n" + "\n" + "Final Score: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches);
-    }
-}
-game();
-
-/*
-function gameForever(){
-  for (i=0; i<Infinity; i++){
     let playerSelection = prompt("Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.").toLowerCase();
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
@@ -107,8 +91,18 @@ function gameForever(){
       alert("It appears to be a tie." + "\n" + "\n" + "Final Score: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches);
     }
 }
-gameForever();
+game();
 */
+
+function gameForever(){
+  for (i=0; i<Infinity; i++){
+    let playerSelection = prompt("Rock, Paper, or Scissors?" + "\n" + "\n" + "This is not case sensitive, but spelling does matter.").toLowerCase();
+    let computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+  }
+}
+gameForever();
+
 
     </script>
   </body>
