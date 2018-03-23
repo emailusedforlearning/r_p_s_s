@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="script" href="./RPSSjs.js">
-    <title>Rock, Paper, Scissors, SHOOT!</title>
-  </head>
-  <body>
-    <div class="btns">
-      <button id="rock" onClick="gameForever(this.id)" >Rock</button>
-      <button id="paper" onClick="gameForever(this.id)" >Paper</button>
-      <button id="scissors" onClick="gameForever(this.id)" >Scissors</button>
-    </div>
-    <div id="scoreBoard"></div>
 
-    <script>
-/*
     let playerPoints = 0;
     let computerPoints = 0;
     let tiedMatches = 0;
@@ -74,7 +58,3 @@ function playRound (playerSelection, computerSelection){
     }
   }
 }
-*/
-    </script>
-  </body>
-</html>
