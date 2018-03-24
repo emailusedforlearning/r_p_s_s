@@ -11,13 +11,19 @@
       <button class="pChoice" id="paper" onClick="gameForever(this.id)">Paper</button>
       <button class="pChoice" id="scissors" onClick="gameForever(this.id)">Scissors</button>
     </div>
-    <div id="scoreBoard"></div>
+    <div id="scoreBoard">
+      <div id="outcome"></div>
+      <div id="userScore"></div>
+      <div id="compScore"></div>
+      <div id="stats"></div>
+    </div>
 
     <script>
 
     let playerPoints = 0;
     let computerPoints = 0;
     let tiedMatches = 0;
+    let totalMatches = 0;
 
 function gameForever(clicked_id){
   let playerSelection = clicked_id;
@@ -44,7 +50,11 @@ function computerPlay(){
 function playRound (playerSelection, computerSelection){
   if (playerSelection === computerSelection){
     tiedMatches +=1;
-    return document.getElementById("scoreBoard").innerHTML = "It is a tie!" + "\n" + "\n" + "You both picked: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "No points will be awarded." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+    totalMatches +=1;
+    document.getElementById("scoreBoard").innerHTML = `"It is a tie!" + "\n" + "\n" + "You both picked: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "No points will be awarded." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n"`;
+    document.getElementById("userScore").innerHTML = `"Your Score: " + "\n" + playerPoints + "\n" + "\n"`;
+    document.getElementById("compScore").innerHTML = `"Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n"`;
+    document.getElementById("compScore").innerHTML = `"Tied Matches: " + "\n" + tiedMatches`;
   }
   if (playerSelection === "rock"){
     if (computerSelection === "paper"){
