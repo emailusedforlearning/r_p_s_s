@@ -11,13 +11,33 @@
       <button class="pChoice" id="paper" onClick="gameForever(this.id)">Paper</button>
       <button class="pChoice" id="scissors" onClick="gameForever(this.id)">Scissors</button>
     </div>
-    <div id="scoreBoard">
-      <div id="outcome"></div>
-      <div id="userScore"></div>
-      <div id="compScore"></div>
-      <div id="stats"></div>
+
+  <div id="scoreBoard">
+
+    <div class="outcomeData" id="outcomeParent">
+      <div class="outcomes" id="outcome"></div>
+    </div>
+    <div class="outcomeData" id="staticData">
+      <div class="outcomes" id="userPick"></div>
+      <div class="outcomes" id="compPick"></div>
+      <div class="outcomes" id="userInfo"></div>
+      <div class="outcomes" id="compInfo"></div>
+      <div class="outcomes" id="tiedInfo"></div>
+      <div class="outcomes" id="gameCountInfo"></div>
     </div>
 
+    <div class="outcomeData" id="varData">
+      <div class="outcomes" id="userPickName"></div>
+      <div class="outcomes" id="compPickName"></div>
+      <div class="outcomes" id="userScore"></div>
+      <div class="outcomes" id="compScore"></div>
+      <div class="outcomes" id="tiedScore"></div>
+      <div class="outcomes" id="gameCount"></div>
+    </div>
+
+
+
+</div>
     <script>
 
     let playerPoints = 0;
@@ -51,36 +71,123 @@ function playRound (playerSelection, computerSelection){
   if (playerSelection === computerSelection){
     tiedMatches +=1;
     totalMatches +=1;
-    document.getElementById("scoreBoard").innerHTML = `"It is a tie!" + "\n" + "\n" + "You both picked: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "No points will be awarded." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n"`;
-    document.getElementById("userScore").innerHTML = `"Your Score: " + "\n" + playerPoints + "\n" + "\n"`;
-    document.getElementById("compScore").innerHTML = `"Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n"`;
-    document.getElementById("compScore").innerHTML = `"Tied Matches: " + "\n" + tiedMatches`;
+    document.getElementById("outcome").innerHTML = "It is a tie! No points will be awarded.";
+    document.getElementById("userPick").innerHTML = `User chose: <br>`;
+    document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+    document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+    document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+    document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+    document.getElementById("userScore").innerHTML = playerPoints;
+    document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+    document.getElementById("compScore").innerHTML =  computerPoints;
+    document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+    document.getElementById("tiedScore").innerHTML = tiedMatches;
+    document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+    document.getElementById("gameCount").innerHTML = totalMatches;
   }
-  if (playerSelection === "rock"){
+  else if (playerSelection === "rock"){
     if (computerSelection === "paper"){
       computerPoints +=1;
-      return document.getElementById("scoreBoard").innerHTML = "User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+      totalMatches +=1;
+      document.getElementById("outcome").innerHTML = `Computer Wins. <br>`;
+      document.getElementById("userPick").innerHTML = `User chose: <br>`;
+      document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+      document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+      document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+      document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+      document.getElementById("userScore").innerHTML = playerPoints;
+      document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+      document.getElementById("compScore").innerHTML =  computerPoints;
+      document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+      document.getElementById("tiedScore").innerHTML = tiedMatches;
+      document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+      document.getElementById("gameCount").innerHTML = totalMatches;
     }else {
       playerPoints +=1;
-      return document.getElementById("scoreBoard").innerHTML = "User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+      totalMatches +=1;
+      document.getElementById("outcome").innerHTML = `User Wins! <br>`;
+      document.getElementById("userPick").innerHTML = `User chose: <br>`;
+      document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+      document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+      document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+      document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+      document.getElementById("userScore").innerHTML = playerPoints;
+      document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+      document.getElementById("compScore").innerHTML =  computerPoints;
+      document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+      document.getElementById("tiedScore").innerHTML = tiedMatches;
+      document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+      document.getElementById("gameCount").innerHTML = totalMatches;
     }
   }
-  if (playerSelection === "paper"){
+  else if (playerSelection === "paper"){
     if (computerSelection === "scissors"){
       computerPoints +=1;
-      return document.getElementById("scoreBoard").innerHTML = "User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+      totalMatches +=1;
+      document.getElementById("outcome").innerHTML = `Computer Wins. <br>`;
+      document.getElementById("userPick").innerHTML = `User chose: <br>`;
+      document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+      document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+      document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+      document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+      document.getElementById("userScore").innerHTML = playerPoints;
+      document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+      document.getElementById("compScore").innerHTML =  computerPoints;
+      document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+      document.getElementById("tiedScore").innerHTML = tiedMatches;
+      document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+      document.getElementById("gameCount").innerHTML = totalMatches;
     }else {
       playerPoints +=1;
-      return document.getElementById("scoreBoard").innerHTML = "User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+      totalMatches +=1;
+      document.getElementById("outcome").innerHTML = `User Wins! <br>`;
+      document.getElementById("userPick").innerHTML = `User chose: <br>`;
+      document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+      document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+      document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+      document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+      document.getElementById("userScore").innerHTML = playerPoints;
+      document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+      document.getElementById("compScore").innerHTML =  computerPoints;
+      document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+      document.getElementById("tiedScore").innerHTML = tiedMatches;
+      document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+      document.getElementById("gameCount").innerHTML = totalMatches;
     }
   }
-  if (playerSelection === "scissors"){
+  else if (playerSelection === "scissors"){
     if (computerSelection === "rock"){
       computerPoints +=1;
-      return document.getElementById("scoreBoard").innerHTML = "User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: " + "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "Computer wins." + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+      totalMatches +=1;
+      document.getElementById("outcome").innerHTML = `Computer Wins. <br>`;
+      document.getElementById("userPick").innerHTML = `User chose: <br>`;
+      document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+      document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+      document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+      document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+      document.getElementById("userScore").innerHTML = playerPoints;
+      document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+      document.getElementById("compScore").innerHTML =  computerPoints;
+      document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+      document.getElementById("tiedScore").innerHTML = tiedMatches;
+      document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+      document.getElementById("gameCount").innerHTML = totalMatches;
     }else {
       playerPoints +=1;
-      return document.getElementById("scoreBoard").innerHTML = "User chose: " + "\n" + playerSelection.toUpperCase() + "\n" + "\n" + "and Computer chose: "+ "\n" + computerSelection.toUpperCase() + "." + "\n" + "\n" + "User wins!" + "\n" + "\n" + "\n" + "Points: " + "\n" + "\n" + "\n" + "Your Score: " + "\n" + playerPoints + "\n" + "\n" + "Computer Score: " + "\n" + computerPoints + "\n" + "\n" + "\n" + "Tied Matches: " + "\n" + tiedMatches;
+      totalMatches +=1;
+      document.getElementById("outcome").innerHTML = `User Wins! <br>`;
+      document.getElementById("userPick").innerHTML = `User chose: <br>`;
+      document.getElementById("userPickName").innerHTML = playerSelection.toUpperCase();
+      document.getElementById("compPick").innerHTML = `Computer chose: <br>`;
+      document.getElementById("compPickName").innerHTML = computerSelection.toUpperCase();
+      document.getElementById("userInfo").innerHTML = `Your Score: <br>`;
+      document.getElementById("userScore").innerHTML = playerPoints;
+      document.getElementById("compInfo").innerHTML = `Computer Score: <br>`;
+      document.getElementById("compScore").innerHTML =  computerPoints;
+      document.getElementById("tiedInfo").innerHTML = `Tied Matches: <br>`;
+      document.getElementById("tiedScore").innerHTML = tiedMatches;
+      document.getElementById("gameCountInfo").innerHTML = `Game Count: <br>`;
+      document.getElementById("gameCount").innerHTML = totalMatches;
     }
   }
 }
