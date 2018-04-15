@@ -12,35 +12,69 @@
       <button class="pChoice" id="scissors" onClick="gameForever(this.id)">Scissors</button>
     </div>
 
+    <div id="scoreBoard" >
 
+      <div class="outcomeData" id="outcomeParent">
+        <div class="outcomes" id="outcome"></div>
+      </div>
+
+      <div class="outcomeData">
+        <div class="outcomes Player" id="userPick"></div>
+        <div class="outcomes Player PPName" id="userPickName"></div>
+      </div>
+
+      <div class="outcomeData">
+        <div class="outcomes Player" id="userInfo"></div>
+        <div class="outcomes Player" id="userScore"></div>
+      </div>
+
+      <div class="outcomeData">
+        <div class="outcomes CompPlayer" id="compPick"></div>
+        <div class="outcomes CompPlayer CPName" id="compPickName"></div>
+      </div>
+
+      <div class="outcomeData">
+        <div class="outcomes CompPlayer" id="compInfo"></div>
+        <div class="outcomes CompPlayer" id="compScore"></div>
+      </div>
+
+      <div class="outcomeData" id="staticData">
+        <div class="outcomes tied" id="tiedInfo"></div>
+        <div class="outcomes tied" id="tiedScore"></div>
+      </div>
+
+      <div class="outcomeData" id="varData">
+        <div class="outcomes" id="gameCountInfo"></div>
+        <div class="outcomes" id="gameCount"></div>
+      </div>
+
+  </div>
+<!-- OLD SCOREBOARD
   <div id="scoreBoard" >
-
 
     <div class="outcomeData" id="outcomeParent">
       <div class="outcomes" id="outcome"></div>
     </div>
     <div class="outcomeData" id="staticData">
-      <div class="outcomes" id="userPick"></div>
-      <div class="outcomes" id="compPick"></div>
-      <div class="outcomes" id="userInfo"></div>
-      <div class="outcomes" id="compInfo"></div>
-      <div class="outcomes" id="tiedInfo"></div>
+      <div class="outcomes Player" id="userPick"></div>
+      <div class="outcomes CompPlayer" id="compPick"></div>
+      <div class="outcomes Player" id="userInfo"></div>
+      <div class="outcomes CompPlayer" id="compInfo"></div>
+      <div class="outcomes tied" id="tiedInfo"></div>
       <div class="outcomes" id="gameCountInfo"></div>
     </div>
 
-
     <div class="outcomeData" id="varData">
-      <div class="outcomes" id="userPickName"></div>
-      <div class="outcomes" id="compPickName"></div>
-      <div class="outcomes" id="userScore"></div>
-      <div class="outcomes" id="compScore"></div>
-      <div class="outcomes" id="tiedScore"></div>
+      <div class="outcomes Player" id="userPickName"></div>
+      <div class="outcomes CompPlayer" id="compPickName"></div>
+      <div class="outcomes Player" id="userScore"></div>
+      <div class="outcomes CompPlayer" id="compScore"></div>
+      <div class="outcomes tied" id="tiedScore"></div>
       <div class="outcomes" id="gameCount"></div>
     </div>
 
-
-
 </div>
+-->
     <script>
 
     let playerPoints = 0;

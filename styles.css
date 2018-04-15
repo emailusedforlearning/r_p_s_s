@@ -14,7 +14,7 @@ body,html {
 .btns {
   display: flex;
   flex: 1;
-  min-height: 50vh;
+  min-height: 10vh;
   align-items: center;
   justify-content: center;
 }
@@ -43,6 +43,8 @@ body,html {
   font-size: 1.5rem;
   padding: 1rem .5rem;
   text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .outcomeData {
@@ -63,8 +65,42 @@ body,html {
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 .5rem black;
+  /*text-shadow: 0 0 .5rem black;*/
   display: table-cell;
   vertical-align: middle;
   width: 250px;
+}
+
+ .Player {
+   color: white;
+   background: blue;
+ }
+
+ .PPName {
+   color: black;
+   background: LightBlue;
+   font-weight: bold;
+   font-size: 20px;
+ }
+
+ .CompPlayer {
+   color: white;
+   background: red;
+ }
+
+ .CPName {
+   color: black;
+   background: IndianRed;
+   font-weight: bold;
+   font-size: 20px;
+ }
+
+.tied {
+  color: white;
+  background: orange;
+}
+
+#outcome {
+  color: black;
+  background: yellow;
 }
